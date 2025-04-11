@@ -1,4 +1,4 @@
-module github.com/sbelyanin/metrics
+module github.com/sbelyanin/SSCAN/metrics
 
 go 1.24.2
 
