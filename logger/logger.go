@@ -4,7 +4,7 @@ package logger
 import (
 	"os"
 
-	//"sscan/config"
+	"github.com/sbelyanin/SSCAN/config"
 	"github.com/sirupsen/logrus"
 )
 
