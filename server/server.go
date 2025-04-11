@@ -7,14 +7,17 @@ import (
 	"net/http"
 	"time"
 
+	//"github.com/sbelyanin/SSCAN/config"
+
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/sirupsen/logrus"
 )
 
 type ServerConfig struct {
-	Addr    string `yaml:"addr"`
-	TLSCert string `yaml:"tls_cert"`
-	TLSKey  string `yaml:"tls_key"`
+	Addr         string `yaml:"addr"`
+	TLSCert      string `yaml:"tls_cert"`
+	TLSKey       string `yaml:"tls_key"`
+	AuthHashFile string `yaml:"auth_hash_file"`
 }
 
 func RunServer(ctx context.Context, config ServerConfig) error {

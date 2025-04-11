@@ -21,9 +21,10 @@ type ScanConfig struct {
 }
 
 type ServerConfig struct {
-	Addr    string `yaml:"addr"`
-	TLSCert string `yaml:"tls_cert"`
-	TLSKey  string `yaml:"tls_key"`
+	Addr       string `yaml:"addr"`
+	TLSCert    string `yaml:"tls_cert"`
+	TLSKey     string `yaml:"tls_key"`
+	thHashFile string `yaml:"auth_hash_file"`
 }
 
 type LoggerConfig struct {

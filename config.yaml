@@ -1,0 +1,18 @@
+server:
+  addr: ":9100"
+  tls_cert: "server.crt"
+  tls_key: "server.key"
+  auth_hash_file: "auth.hash"
+
+logger:
+  level: "info"
+  format: "json"
+
+scans:
+  - path: "/etc/ssl/certs"
+    period: 3600
+  - path: "/var/lib/nginx/certs/example.com.pem"
+    period: 7200
+
+config_period: 3600
+

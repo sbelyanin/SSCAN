@@ -41,7 +41,7 @@ func main() {
 
 	// Запуск HTTP сервера
 	go func() {
-		err := server.RunServer(ctx, server.ServerConfig(cfg.Server))
+		err := server.RunServer(ctx, server.ServerConfig{})
 		if err != nil {
 			logrus.Fatalf("Server failed: %v", err)
 		}
