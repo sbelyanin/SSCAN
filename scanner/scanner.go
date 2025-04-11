@@ -9,10 +9,11 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
-	"sscan/config"
 	"sync"
 	"time"
 
+	"github.com/sbelyanin/SSCAN/config"
+	"github.com/sbelyanin/SSCAN/metrics"
 	"github.com/sirupsen/logrus"
 )
 
@@ -117,11 +118,11 @@ func (s *Scanner) checkCertificate(path string) error {
 		return err
 	}
 
-	CertExpiryTime.WithLabelValues(path).Set(float64(cert.NotAfter.Unix()))
-	CertSubject.WithLabelValues(path, cert.Subject.String()).Set(1)
-	CertIssuer.WithLabelValues(path, cert.Issuer.String()).Set(1)
-	CertNotBefore.WithLabelValues(path).Set(float64(cert.NotBefore.Unix()))
-	CertNotAfter.WithLabelValues(path).Set(float64(cert.NotAfter.Unix()))
+	metrics.CertExpiryTime.WithLabelValues(path).Set(float64(cert.NotAfter.Unix()))
+	metrics.CertSubject.WithLabelValues(path, cert.Subject.String()).Set(1)
+	metrics.CertIssuer.WithLabelValues(path, cert.Issuer.String()).Set(1)
+	metrics.CertNotBefore.WithLabelValues(path).Set(float64(cert.NotBefore.Unix()))
+	metrics.CertNotAfter.WithLabelValues(path).Set(float64(cert.NotAfter.Unix()))
 
 	return nil
 }
