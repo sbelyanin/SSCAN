@@ -8,7 +8,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func InitLogger(config LoggerConfig) error {
+func InitLogger(config config.LoggerConfig) error {
 	logrus.SetOutput(os.Stdout)
 	logrus.SetLevel(getLogLevel(config.Level))
 	logrus.SetFormatter(getFormatter(config.Format))
