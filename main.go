@@ -9,10 +9,11 @@ import (
 	"syscall"
 	"time"
 
-	"sscan/config"
-	"sscan/logger"
-	"sscan/metrics"
-	"sscan/scanner"
+	"github.com/sbelyanin/SSCAN/config"
+	"github.com/sbelyanin/SSCAN/logger"
+	"github.com/sbelyanin/SSCAN/metrics"
+	"github.com/sbelyanin/SSCAN/scanner"
+	"github.com/sbelyanin/SSCAN/server"
 
 	"github.com/sirupsen/logrus"
 )
